@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+body{
+    height: 100vh;
+    padding: 0 5%;
+    background-color: #ABEDC6;
+    color: #403233;
+}
+
+header{
+    background-color: #B9FFB7;
+    min-height: 5%;
+    border-bottom: 2px solid #403233;
+    border-top: 2px solid #403233;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2% 0;
+
+}
+
+header h1{
+
+    margin: 0;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    margin-bottom: 1%;
+    display: block;
+}
+
+.main textarea{
+    width: 40vw;
+    height: 500px;
+    color: black;
+    padding: 1.5vw;
+    box-sizing: border-box;
+}
+
+table, td{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.main  .creation{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.main  p{
+    margin: 0px;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+}
+
+#chistka{
+    background-color: #B9FFB7; 
+    color: #403233;
+    border: 2px solid #98D9C2;
+}
+
+#chistka:hover{
+    border-color: #ffd34f;
+    transition-duration: 0.2s;
+}
+
+button{
+    background-color: #F19A3E;
+    color: #403233;
+    padding: 1.5vh 4vw;
+    width: 20vw;
+    font-size: 18px;
+    border: 0;
+    color: white;
+}
+
+button:hover{
+    background-color: #ffd34f;
+    transition-duration: 0.5s;
+}
+
+.main #vvodVivodCode{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main #vvodVivodCode textarea{
+    margin-bottom: 2%;
+}
+
+.main h1{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    margin-bottom: 1%;
+}
+
+.main h3{
+    text-decoration: overline;
+    margin: 0;
+    font-weight: 600;
+}
+
+summary ~ button{
+    padding: 1.5vh;
+    margin: 1%;
+}
+
+summary ~ *{
+    padding: .5vh;
+    margin: 1%;
+}
+
+
+summary::-webkit-details-marker{display:none;}
+summary::-moz-list-bullet{list-style-type:none;}
+summary::marker{display:none;} 
+summary {
+   display:inline-flex;
+   align-items: center;
+   padding: .3em .5em .3em .4em;
+   cursor: pointer;
+}
+summary:before {  
+  content: "↓";
+  margin-right: .3em;
+}
+details[open] > summary:before {
+  content: "↑";
+}
+
+details{
+  display:block;
+}
+
+#secondPart{
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #98D9C2;
+}
+
+
+#textHere{
+    background-color: white;
+    color: black;
+    width: 80%;
+    min-height: 20vh;
+    padding: 1.5vw;
+    box-sizing: border-box;
+    border: 2px double #98D9C2;
+    word-break: break-all;
+    margin-bottom: 2%;
+}
+
+.afterAll{
+    margin: 1% 2%;
+}
+
+.afterAll a{
+    color: white;
+    text-decoration: none;
+}

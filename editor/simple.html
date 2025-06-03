@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href = '../styles/css.css' rel = 'stylesheet'>
+  <title>WYSIWYG HTML Editor</title>
+</head>
+<body>
+
+<header>
+  <div><h1>WYSIWYG HTML Editor</h1>
+  </div>
+</header>
+
+
+<div class = 'main'>
+  <div id = 'vvodVivodCode'>
+    <textarea id="inputt" placeholder="Select here and click the button"></textarea>
+    <div>
+      <button id="chistka" onclick="chistka()">Очистить</button>
+      <button id="vivod" onclick="vivod()">Вывод</button>
+    </div>
+  </div>
+
+  <div id = 'finctii'>
+    <h1>Создание HTML элементов</h1>
+    <details open>
+      <summary><h3>Открыть функции</h3></summary>
+
+
+      <div class = 'creation table'>
+        <button id = 'createTable'>Создать таблицу</button>
+        <details>
+          <summary><p>Расширенные настройки</p></summary>
+          <input placeholder="Введите цвет границы" id = 'borderColor'/>
+          <input placeholder="Введите ширину границы" id = 'borderWidth'/>
+        </details>
+      </div>
+
+
+      <div class = 'creation p'>
+        <button id = 'createP'>Создать абзац</button>
+        <details>
+          <summary><p>Расширенные настройки</p></summary>
+          <input placeholder="Введите размер текста" id = 'textSize'/>
+          <input placeholder="Введите цвет текста" id = 'textColor'/>
+        </details>
+      </div>
+
+      <div class = 'creation list'>
+        <button id = 'createList'>Создать список</button>
+        <details>
+          <summary><p>Расширенные настройки</p></summary>
+          <div>
+            <input type = 'radio' name = 'ulOrOl' id = 'ol' checked>
+            <label for="ol">Ordered list</label>
+          </div>
+          <div>
+            <input type = 'radio' name = 'ulOrOl' id = 'ul'>
+            <label for="ul">Unordered list</label>
+          </div>
+        </details>
+      </div>
+
+
+      <div class = 'creation hh1'>
+        <button id = 'createH1'>Создать заголовок</button>
+        <details>
+          <summary><p>Расширенные настройки</p></summary>
+          <input placeholder="Введите цвет заголовка" id = 'h1Color'/>
+          <input placeholder="Введите уровень заголовка" id = 'h1Weight'/>
+        </details>
+      </div>
+    </details>
+
+    <h1>Оформление HTML элементов</h1>
+    <details>
+    <summary><h3>Открыть функции</h3></summary>
+        <button id="buttonU" onclick="uTag()">Обернуть выделение тегом 'u' (подчеркивание)</button>
+        <button id="textt" onclick="bTag()">Обернуть выделение тегом 'b' (жирный)</button>
+        <button id="textt" onclick="iTag()">Обернуть выделение тегом 'i' (курсив)</button>
+    <button id="textt" onclick="delTag()">Обернуть выделение тегом 'del' (зачеркнутый)</button>
+    </details>
+  </div>
+</div>
+
+<div id = 'secondPart'>
+  <h1 style = 'font-family: "Comfortaa", sans-serif; font-weight: 700; margin-bottom: 1%;'>Отображение содержимого страницы</h1>
+  <div id = 'textHere'> </div>
+</div>
+
+
+<button class = 'afterAll'><a id="todownloadHTML">Сохранить (.html)</a></button>
+<button class = 'afterAll'><a id="todownloadText">Сохранить (.txt)</a></button>
+
+<hr style = 'size: 2px; color: #403233; margin: 3%;'>
+
+
+<script src = 'funcs.js' defer></script>
+
+
+</body>
+</html>
