@@ -189,7 +189,15 @@ nav{
     background-color: #98D9C2;
 }
 
-li a, header a{
+li a{
+    text-decoration: none;
+    color: #403233;
+    font-weight: 500;
+    font-family: "Comfortaa", sans-serif;
+} 
+
+
+header a{
     text-decoration: none;
     color: #403233;
     font-weight: 500;
