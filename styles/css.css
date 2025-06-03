@@ -189,12 +189,42 @@ nav{
     background-color: #98D9C2;
 }
 
-li a{
+li a, header a{
     text-decoration: none;
     color: #403233;
     font-weight: 500;
+    font-family: "Comfortaa", sans-serif;
 }
 
 li:hover{
     transform: scale(1.2);
+}
+
+main{
+    margin: 1% 15%;
+    background-color: white;
+    padding: 2vh 3.5vw;
+    text-align: justify;
+    font-size: 2.3vh;
+    font-family: "Open Sans", sans-serif;
+}
+
+main div{
+    display: flex;
+    justify-content: center;
+    padding: 1.5vh;
+    transform: scale(1);
+
+}
+
+div button:hover{
+    transform: scale(1.2);
+}
+
+main button{
+    font-size: 25px;
+}
+
+main p::first-letter{
+    color: #F19A3E;
 }
