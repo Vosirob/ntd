@@ -169,3 +169,32 @@ details{
     color: white;
     text-decoration: none;
 }
+
+
+
+/* for main page */
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30%;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    margin: 0 20%;
+    padding: 1% 0;
+    background-color: #98D9C2;
+}
+
+li a{
+    text-decoration: none;
+    color: #403233;
+    font-weight: 500;
+}
+
+li:hover{
+    transform: scale(1.2);
+}
