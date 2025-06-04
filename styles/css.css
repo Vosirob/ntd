@@ -197,7 +197,7 @@ li a{
 } 
 
 
-header a{
+header a, button a{
     text-decoration: none;
     color: #403233;
     font-weight: 500;
@@ -225,7 +225,7 @@ main div{
 
 }
 
-div button:hover{
+#try:hover, .afterAll:hover{
     transform: scale(1.2);
 }
 
