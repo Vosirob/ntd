@@ -118,7 +118,6 @@ summary ~ *{
     margin: 1%;
 }
 
-
 summary::-webkit-details-marker{display:none;}
 summary::-moz-list-bullet{list-style-type:none;}
 summary::marker{display:none;} 
@@ -204,7 +203,7 @@ header a, button a{
     font-family: "Comfortaa", sans-serif;
 }
 
-li:hover{
+nav li:hover{
     transform: scale(1.2);
 }
 
@@ -233,6 +232,6 @@ main button{
     font-size: 25px;
 }
 
-main p::first-letter{
+.info::first-letter{
     color: #F19A3E;
 }
