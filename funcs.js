@@ -1,11 +1,11 @@
-  let place = document.getElementById('textHere');
-  let inputt = 0;
-  let a = 0;
+let place = document.getElementById('textHere');
+let inputt = 0;
+let a = 0;
 
 
-  let area = document.getElementById('inputt');  // сохранение в локальную переменную
-  area.value = localStorage.getItem('area');
-  setInterval(() => localStorage.setItem('area', area.value), 2000);
+let area = document.getElementById('inputt');  // сохранение в локальную переменную
+area.value = localStorage.getItem('area');
+setInterval(() => localStorage.setItem('area', area.value), 2000);
 
 
 function chistka(){
@@ -13,23 +13,23 @@ function chistka(){
 }
 
   
-  function getInput(){ //функция для получения выделенного текста
-    inputt = document.getElementById('inputt');
-    if (inputt == 0){ //проверка на пустой input
-      return;
-    }
-    a = String(inputt.value.slice(inputt.selectionStart, inputt.selectionEnd)) ; //получение выделенного текста
-    return a;
+function getInput(){ //функция для получения выделенного текста
+  inputt = document.getElementById('inputt');
+  if (inputt == 0){ //проверка на пустой input
+    return;
   }
+  a = String(inputt.value.slice(inputt.selectionStart, inputt.selectionEnd)) ; //получение выделенного текста
+  return a;
+}
 
 
 
-  document.getElementById('todownloadHTML').onclick = function() { //функция для сохранения текста кода в виде html-страницы
-    let text = "<DOCTYPE! html> \n<html>\n<body> \n" + document.getElementById('inputt').value + '\n</body>\n</html>';
-    let myData = 'data:application/html;charset=utf-8,' + encodeURIComponent(text);
-    this.href = myData;
-    this.download = 'data.html';
-    // console.log(text);
+document.getElementById('todownloadHTML').onclick = function() { //функция для сохранения текста кода в виде html-страницы
+  let text = "<DOCTYPE! html> \n<html>\n<body> \n" + document.getElementById('inputt').value + '\n</body>\n</html>';
+  let myData = 'data:application/html;charset=utf-8,' + encodeURIComponent(text);
+  this.href = myData;
+  this.download = 'data.html';
+  // console.log(text);
 }
 
 document.getElementById('todownloadText').onclick = function() { //функция для сохранения текста кода в виде html-страницы
@@ -43,65 +43,65 @@ document.getElementById('todownloadText').onclick = function() { //функци�
 
 
 
-  function uTag() { //добавление тега подчеркивания (u) к выделенному тексту в input
-    getInput();
-    if (a == 0){ //проверка на пустое выделение
-      return;
+function uTag() { //добавление тега подчеркивания (u) к выделенному тексту в input
+  getInput();
+  if (a == 0){ //проверка на пустое выделение
+    return;
+  }
+  // console.log(a[0], a[a.length - 1]); проверка
+    if ((a.slice(0,3) == '<u>') && (a.slice(a.length -4) == '</u>')){ // отмена тега (проверка, если вставляемы символ(тег) уже применен)
+      return inputt.setRangeText(`${a.slice(3, -4)}`);
     }
-    // console.log(a[0], a[a.length - 1]); проверка
-      if ((a.slice(0,3) == '<u>') && (a.slice(a.length -4) == '</u>')){ // отмена тега (проверка, если вставляемы символ(тег) уже применен)
-        return inputt.setRangeText(`${a.slice(3, -4)}`);
-      }
-      // console.log((a.slice(0,3) + '__' + a.slice(a.length -4))); проверка
-      return inputt.setRangeText(`<u>${a}</u>`);
+    // console.log((a.slice(0,3) + '__' + a.slice(a.length -4))); проверка
+    return inputt.setRangeText(`<u>${a}</u>`);
+}
+
+
+function bTag() { //добавление тега жирного (b) к выделенному тексту в input
+  getInput();
+  if (a == 0){ //проверка на пустое выделение
+    return;
   }
-
-
-  function bTag() { //добавление тега жирного (b) к выделенному тексту в input
-    getInput();
-    if (a == 0){ //проверка на пустое выделение
-      return;
+  // console.log(a[0], a[a.length - 1]);
+    if ((a.slice(0,3) == '<b>') && (a.slice(a.length -4) == '</b>')){ // отмена тега (проверка, если вставляемы символ(тег) уже применен)
+      return inputt.setRangeText(`${a.slice(3, -4)}`);
     }
-    // console.log(a[0], a[a.length - 1]);
-      if ((a.slice(0,3) == '<b>') && (a.slice(a.length -4) == '</b>')){ // отмена тега (проверка, если вставляемы символ(тег) уже применен)
-        return inputt.setRangeText(`${a.slice(3, -4)}`);
-      }
-      // console.log((a.slice(0,3) + '__' + a.slice(a.length -4))); проверка
-      return inputt.setRangeText(`<b>${a}</b>`);
-  }
+    // console.log((a.slice(0,3) + '__' + a.slice(a.length -4))); проверка
+    return inputt.setRangeText(`<b>${a}</b>`);
+}
 
-  function iTag() { //добавление тега курсива (i) к выделенному тексту в input
-    getInput();
-    if (a == 0){ //проверка на пустое выделение
-      return;
+function iTag() { //добавление тега курсива (i) к выделенному тексту в input
+  getInput();
+  if (a == 0){ //проверка на пустое выделение
+    return;
+  }
+  // console.log(a[0], a[a.length - 1]);
+    if ((a.slice(0,3) == '<i>') && (a.slice(a.length -4) == '</i>')){ // отмена тега (проверка, если вставляемы символ(тег) уже применен)
+      return inputt.setRangeText(`${a.slice(3, -4)}`);
     }
-    // console.log(a[0], a[a.length - 1]);
-      if ((a.slice(0,3) == '<i>') && (a.slice(a.length -4) == '</i>')){ // отмена тега (проверка, если вставляемы символ(тег) уже применен)
-        return inputt.setRangeText(`${a.slice(3, -4)}`);
-      }
-      // console.log((a.slice(0,3) + '__' + a.slice(a.length -4))); проверка
-      return inputt.setRangeText(`<i>${a}</i>`);
-  }
+    // console.log((a.slice(0,3) + '__' + a.slice(a.length -4))); проверка
+    return inputt.setRangeText(`<i>${a}</i>`);
+}
 
-  function delTag() { //добавление тега зачеркивания (del) к выделенному тексту в input
-    getInput();
-    if (a == 0){ //проверка на пустое выделение
-      return;
+function delTag() { //добавление тега зачеркивания (del) к выделенному тексту в input
+  getInput();
+  if (a == 0){ //проверка на пустое выделение
+    return;
+  }
+  // console.log(a[0], a[a.length - 1]);
+    if ((a.slice(0,5) == '<del>') && (a.slice(a.length -6) == '</del>')){ // отмена тега (проверка, если вставляемы символ(тег) уже применен)
+      return inputt.setRangeText(`${a.slice(5, -6)}`);
     }
-    // console.log(a[0], a[a.length - 1]);
-      if ((a.slice(0,5) == '<del>') && (a.slice(a.length -6) == '</del>')){ // отмена тега (проверка, если вставляемы символ(тег) уже применен)
-        return inputt.setRangeText(`${a.slice(5, -6)}`);
-      }
-      // console.log((a.slice(0,5) + '__' + a.slice(a.length -6))); проверка
-      return inputt.setRangeText(`<del>${a}</del>`);
-  }
+    // console.log((a.slice(0,5) + '__' + a.slice(a.length -6))); проверка
+    return inputt.setRangeText(`<del>${a}</del>`);
+}
 
-  function vivod(){ //функция вывода на страницу
-    getInput();
-    return textHere.innerHTML = inputt.value;//output as html
-    //return textHere.innerText = inputt.value;
-    //output as text
-  }
+function vivod(){ //функция вывода на страницу
+  getInput();
+  return textHere.innerHTML = inputt.value;//output as html
+  //return textHere.innerText = inputt.value;
+  //output as text
+}
 
 
 function getNums(){ //фкнкция для получения кол-ва строк и столбцов
@@ -160,29 +160,29 @@ document.getElementById('createP').addEventListener("click", () => { //функ�
     let textColor = document.getElementById('textColor').value? document.getElementById('textColor').value: 'black'; // запрос цвета текста
 
     inputt.value += `\n<p style = 'font-size: ${textSize}px; color: ${textColor}'></p> <!-- Между тегами вводите текст абзаца -->`; // отрисовка абзаца
-  });
+});
 
 
 
 
 
 
-  document.getElementById('createList').addEventListener("click", () => { //функция для оформления списка
-    getInput();
-    let kolvo = +prompt('Сколько элементов в вашем списке?'); //запрос кол-ва элеметов в списке (и проверка на число)
-    while (!Number.isFinite(kolvo)) {
-      kolvo = +prompt("Сколько элементов в вашем списке? (ЧИСЛО)");
-    }
+document.getElementById('createList').addEventListener("click", () => { //функция для оформления списка
+  getInput();
+  let kolvo = +prompt('Сколько элементов в вашем списке?'); //запрос кол-ва элеметов в списке (и проверка на число)
+  while (!Number.isFinite(kolvo)) {
+    kolvo = +prompt("Сколько элементов в вашем списке? (ЧИСЛО)");
+  }
 
-    let listType = document.querySelector('input[name="ulOrOl"]:checked').id; //получение типа списка
+  let listType = document.querySelector('input[name="ulOrOl"]:checked').id; //получение типа списка
 
-    inputt.value += '\n<h3>Название вашего списка</h3>  <!-- Начало списка -->'; //отрисовка списка
-    inputt.value += `\n<${listType}>`;
-    for(let i = 0; i < kolvo; i++){
-        inputt.value += `\n<li>Место для вашего текста</li> <!-- ${i+1} элемент списка -->`;
-    }
-    inputt.value += `\n</${listType}> <!-- Конец списка -->`;
-  });
+  inputt.value += '\n<h3>Название вашего списка</h3>  <!-- Начало списка -->'; //отрисовка списка
+  inputt.value += `\n<${listType}>`;
+  for(let i = 0; i < kolvo; i++){
+      inputt.value += `\n<li>Место для вашего текста</li> <!-- ${i+1} элемент списка -->`;
+  }
+  inputt.value += `\n</${listType}> <!-- Конец списка -->`;
+});
 
 
 
@@ -190,13 +190,13 @@ document.getElementById('createP').addEventListener("click", () => { //функ�
 
 document.getElementById('createH1').addEventListener("click", () => { //функция для оформления заголовка
 
-    getInput();
+  getInput();
 
-    let h1Color = document.getElementById('h1Color').value? document.getElementById('h1Color').value : 'black';
-    let h1Weight = document.getElementById('h1Weight').value? document.getElementById('h1Weight').value: 1;
+  let h1Color = document.getElementById('h1Color').value? document.getElementById('h1Color').value : 'black';
+  let h1Weight = document.getElementById('h1Weight').value? document.getElementById('h1Weight').value: 1;
 
-    inputt.value += `\n<h${h1Weight} style  = 'color: ${h1Color}'></h${h1Weight}> <!-- Между тегами вводите текст заголовка -->`;
-  });
+  inputt.value += `\n<h${h1Weight} style  = 'color: ${h1Color}'></h${h1Weight}> <!-- Между тегами вводите текст заголовка -->`;
+});
 
 
 
