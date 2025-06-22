@@ -175,17 +175,17 @@ details{
 
 nav ul{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 30%;
+    /* gap: 30%; */
     margin: 0;
     padding: 0;
 }
 
 nav{
-    margin: 0 20%;
     padding: 1% 0;
     background-color: #98D9C2;
+    min-width: fit-content;
 }
 
 li a{
@@ -193,6 +193,8 @@ li a{
     color: #403233;
     font-weight: 500;
     font-family: "Comfortaa", sans-serif;
+    display: inline-block;
+    min-width: 15%;
 } 
 
 
@@ -208,7 +210,7 @@ nav li:hover{
 }
 
 main{
-    margin: 1% 15%;
+    margin: 1vh 13vw;
     background-color: white;
     padding: 2vh 3.5vw;
     text-align: justify;
@@ -239,6 +241,13 @@ main button{
 #try{
     padding: 0.5vh 2em;
     display: flex;
+    width: fit-content;
     justify-content: center;
-    font-size: 1.5em;
+    font-size: 3vh; 
+}
+
+#try a{
+    display: inline-block;
+    width: fit-content;
+    text-align: center;
 }
